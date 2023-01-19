@@ -1,4 +1,4 @@
-import { AppDispatch, RootState } from "../store"
+import { AppDispatch } from "../store"
 import { loginUser, setErrorMessage, toggleLoading } from "../slices/authSlice"
 import axiosApp from "../axios-app"
 import { User } from "../../types"
@@ -8,7 +8,6 @@ export const signUp = (name: string, email: string, password: string) => async (
   dispatch(toggleLoading())
   try {
     const user = (await axiosApp.post<User>('/api/auth/signup', { name, email, password })).data
-    console.log(user)
     dispatch(loginUser(user))
     dispatch(toggleLoading())
   } catch (error) {
@@ -26,7 +25,6 @@ export const logIn = (email: string, password: string) => async (dispatch: AppDi
   dispatch(toggleLoading())
   try {
     const user = (await axiosApp.post<User>('/api/auth/login', { email, password })).data
-    console.log(user)
     dispatch(loginUser(user))
     dispatch(toggleLoading())
   } catch (error) {

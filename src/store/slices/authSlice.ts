@@ -7,16 +7,7 @@ export interface AuthState {
   loading: boolean
 }
 
-
 const initialState: AuthState = {
-  // currentUser: {
-  //   id: 2,
-  //   name: 'Alex',
-  //   email: 'alex@mail.ru',
-  //   lastLoginTimestamp: '1673965260317',
-  //   registrationTimestamp: '1673965260317',
-  //   status: 'active'
-  // },
   currentUser: {
     id: NaN,
     name: '',
@@ -42,7 +33,7 @@ export const authSlice = createSlice({
     logoutUser: state => {
       state.currentUser = initialState.currentUser
     },
-    setErrorMessage: (state, {payload: message}: PayloadAction<string>) => {
+    setErrorMessage: (state, { payload: message }: PayloadAction<string>) => {
       state.errorMessage = message
     },
     toggleLoading: state => {

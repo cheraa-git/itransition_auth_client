@@ -16,7 +16,6 @@ export function AuthPage() {
   const errorMessage = useAppSelector((state: RootState) => state.auth.errorMessage)
   const loading = useAppSelector((state: RootState) => state.auth.loading)
 
-
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

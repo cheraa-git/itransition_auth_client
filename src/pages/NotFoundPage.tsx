@@ -5,7 +5,7 @@ export function NotFoundPage() {
   const navigate = useNavigate()
 
   const goBackPage = () => {
-    navigate(-1) // TODO: проверить, если нет страницы назад, то перейти на главную
+    navigate(-1)
   }
   return (
     <div className="flex items-center  flex-col h-[100vh] tracking-widest bg-white">
