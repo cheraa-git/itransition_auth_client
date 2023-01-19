@@ -1,0 +1,61 @@
+
+.table-container {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(217, 98, 43, 0.32);
+    width: min-content;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #ff4e00;
+}
+
+.active {
+    color: #7eb26d;
+}
+
+.blocked {
+    color: #bd6f6f;
+}
+
+.checkbox-select-all {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #D9622B;
+    font-weight: 100;
+}
+.checkbox-select-all p {
+    position: absolute;
+    bottom: 0;
+    left: .5rem;
+    text-transform: lowercase;
+    font-size: .75rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70vw;
+}
+
+tr {
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem;
+}
+
+td {
+    padding: 1rem;
+    color: #545454;
+}
+
+thead td {
+    text-transform: uppercase;
+    font-size: .9rem;
+    color: #D9622B;
+}
+
+
+
