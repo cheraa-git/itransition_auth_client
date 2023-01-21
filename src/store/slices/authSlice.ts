@@ -14,7 +14,8 @@ const initialState: AuthState = {
     email: '',
     lastLoginTimestamp: '',
     registrationTimestamp: '',
-    status: 'active'
+    status: 'active',
+    token: ''
   },
   errorMessage: '',
   loading: false
@@ -32,12 +33,17 @@ export const authSlice = createSlice({
     },
     logoutUser: state => {
       state.currentUser = initialState.currentUser
+      localStorage.removeItem('token')
     },
     setErrorMessage: (state, { payload: message }: PayloadAction<string>) => {
       state.errorMessage = message
     },
-    toggleLoading: state => {
-      state.loading = !state.loading
+    toggleLoading: (state, { payload }: PayloadAction<boolean | undefined>) => {
+      if (payload !== undefined) {
+        state.loading = payload
+      } else {
+        state.loading = !state.loading
+      }
     }
   }
 })

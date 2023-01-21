@@ -87,11 +87,13 @@ export function AuthPage() {
     </>
   )
 
+  if (loading) return <div className="text-center my-[40vh]"><Loader/></div>
+
   return (
     <div className="bg-white w-min p-7 mx-auto mt-16 rounded">
       <p className="w-full bg-red-100 rounded text-center">{errorMessage ? errorMessage : ''}</p>
       <div className="text-center h-[28px]">
-        {loading ? <Loader/> : <img src={icon} alt="auth-icon" className="w-7 mx-auto"/>}
+        <img src={icon} alt="auth-icon" className="w-7 mx-auto"/>
       </div>
       {mode === 'signup' ? signUpContent : loginContent}
     </div>

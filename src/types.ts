@@ -5,4 +5,5 @@ export interface User {
   registrationTimestamp: string
   lastLoginTimestamp: string
   status: 'blocked' | 'active'
+  token: string
 }
